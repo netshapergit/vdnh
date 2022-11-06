@@ -1,21 +1,34 @@
-## Laravel PHP Framework
+## Web сервис ВДНХ + PWA приложение
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
+- Конструктор маршрутов
+- Каталогизатор по объектам ВДНХ
+- Система поиска и фильтров
+- Интерактивная карта с возможностью просматривать нагруженность объектов
+- Система расчёта статистики посещений
+- Система приоретизации предложений на основе данных о пользователе
+- Персональная лента предложений
+- Расширенная программа лояльности 
+- Найди друзей на ВДНХ
+- PWA приложение
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+## Demo версия
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+https://guidevdnh.ru/
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Как установить?
 
-## Official Documentation
+Развернуть на сервере (Apache, Ngnix, MySQL, PHP можно 5.6) Прописать логин и пароль базы данны в настройках app/config/database.local.php. В настройках хостинга указать корневую папку public. Административная часть позволяет управления контентом, создавать сущности, макеты, логику - https://guidevdnh.ru/admin
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+## PWA приложение
 
-### Contributing To Laravel
+Можно поставить на ПК и на мобильное устройство.
+1.Открыть сайт GuideVDNH.ru
+2.Нажать кнопку Share
+3.В появившемся меню выбрать - На экран «Домой»
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+## Техническая поддержка 
 
-### License
+Жилкин Александр 
+- netshaper@gmail.com
+- @netshaper
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
