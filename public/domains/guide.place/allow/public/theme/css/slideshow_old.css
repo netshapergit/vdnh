@@ -1,0 +1,138 @@
+.position-slideshow .owl-carousel {
+	overflow: hidden;
+}
+
+.position-slideshow,
+.position-slideshow > .grid-col {
+	display: block;
+}
+
+.block.position-slideshow {
+	/*z-index: 6;*/
+    width: 100%;
+    margin: auto;
+}
+
+.block.position-slideshow .owl-carousel .owl-item img {
+	width: 100%;
+}
+
+.block.position-slideshow .slide .image {
+	width:100%;
+}
+
+.block.position-slideshow .slide .caption {
+	width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+}
+.block.position-slideshow .slide .caption .header {
+
+    color: #fff;
+    margin: auto;
+    width: 80%;
+	text-align: center;
+	font-family: 'Lobster', cursive;
+	font-size:48px;
+	letter-spacing: 2px;
+}
+.block.position-slideshow .slide .caption .description {
+	font-size:18px;
+	color: #fff;
+	width: 80%;
+	text-align: center;
+	margin: auto;
+}
+
+.block.position-slideshow .owl-controls {
+	margin: 0;
+	height: 0;
+	width: 100%;
+}
+
+.block.position-slideshow .owl-controls .owl-nav {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+}
+
+.block.position-slideshow .owl-controls .owl-nav [class*="owl-"] {
+	position: absolute;
+	background: url("/site/theme/images/arrows.png") !important;
+	width: 72px;
+	height: 72px;
+	/*margin: -36px 0 0;*/
+	padding: 0;
+}
+
+.block.position-slideshow .owl-controls .owl-nav .owl-prev {
+	left: 25px;
+}
+
+.block.position-slideshow .owl-controls .owl-nav .owl-next {
+	background-position: -72px 0 !important;
+	right: 25px;
+}
+
+.block.position-slideshow .owl-controls .owl-dots {
+	position: absolute;
+	/*height: 18px;*/
+	bottom: 18px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.block.position-slideshow .owl-controls .owl-dots .owl-dot + .owl-dot {
+	margin-left: 16px;
+}
+
+.block.position-slideshow .owl-controls .owl-dots .owl-dot span {
+	margin: 0;
+	width: 96px;
+	height: 6px;
+	background: #fff;
+	border-radius: inherit;
+}
+
+.block.position-slideshow .owl-controls .owl-dots .owl-dot.active span,
+.block.position-slideshow .owl-controls .owl-dots .owl-dot span:hover,
+.block.position-slideshow .owl-controls .owl-dots .owl-dot span:focus {
+	background: #f1b900;
+}
+
+.block.position-slideshow .owl-controls .owl-nav .owl-prev,
+.block.position-slideshow .owl-controls .owl-nav .owl-next {
+    position: absolute;
+    /*top: 41.3%;*/
+	top: 50%;
+    font-family: 'FontAwesome';
+    font-size: 50px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -moz-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+.block.position-slideshow .owl-controls .owl-nav .owl-prev:hover,
+.block.position-slideshow .owl-controls .owl-nav .owl-next:hover {
+	color: #3167db;
+}
+.block.position-slideshow .owl-controls .owl-nav .owl-prev:before {
+	content: "\f104";
+}
+.block.position-slideshow .owl-controls .owl-nav .owl-next:before {
+	content: "\f105";
+}

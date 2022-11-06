@@ -1,0 +1,15 @@
+.block.position-banner_parallax {
+	/*position: absolute;*/
+    height: 360px;
+    overflow: hidden;
+	width: 100%;
+    z-index: 0;
+}
+.position-parallax {
+	z-index: 4;
+	position: absolute;
+	top: -200px;
+	width: 100%;
+	/*padding-top:30px*/
+}
+	

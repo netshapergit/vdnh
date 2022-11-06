@@ -1,0 +1,88 @@
+AddDefaultCharset UTF-8
+Options -MultiViews -Indexes
+RewriteEngine On
+
+# Redirect Trailing Slashes...
+#RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Permanently redirect from www domain to non-www domain
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+################################ AUTO GENERATED ALIASES ################################
+						
+						RewriteCond %{HTTP_HOST} ^guidevdnh\.ru$ [NC]
+						RewriteCond %{REQUEST_URI} ^/site/ [NC]
+						RewriteRule ^site/(.*)$ /domains/guide.place/allow/public/$1 [L]
+							
+########################################################################################
+
+# Domain files
+RewriteCond %{REQUEST_URI} ^/site/ [NC]
+RewriteRule ^site/(.*)$ /domains/%{HTTP_HOST}/allow/public/$1 [L]
+
+# Not allow any files except public files
+RewriteCond %{REQUEST_URI} ^/domains/ [NC]
+RewriteCond %{REQUEST_URI} !^/domains/[^/]+/allow/public/ [NC]
+RewriteRule ^ index.php [L]
+
+# Handle Front Controller...
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+
+# mod_gzip 10/09/2018
+<ifModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</ifModule>
+<IfModule mod_gzip.c>
+	mod_gzip_on         Yes
+	mod_gzip_dechunk    Yes
+	mod_gzip_item_include file		\.(html?|txt|css|js|php|pl)$
+	mod_gzip_item_include mime		^text\.*
+	mod_gzip_item_include mime		^application/x-javascript.*
+	mod_gzip_item_exclude mime		^image\.*
+	mod_gzip_item_exclude rspheader	^Content-Encoding:.*gzip.*
+</IfModule>
+
+# кеширование 
+<ifModule mod_headers.c>
+	#кэшировать html и htm файлы на один день
+	<FilesMatch "\.(html|htm)$">
+		Header set Cache-Control "max-age=43200"
+	</FilesMatch>
+	#кэшировать css, javascript и текстовые файлы на одну неделю
+	<FilesMatch "\.(js|css|txt)$">
+		Header set Cache-Control "max-age=604800"
+	</FilesMatch>
+	#кэшировать флэш и изображения на месяц
+	<FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
+		Header set Cache-Control "max-age=2592000"
+	</FilesMatch>
+	#отключить кэширование
+	<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+		Header unset Cache-Control
+	</FilesMatch>
+</IfModule>
+<ifModule mod_expires.c>
+	ExpiresActive On
+	#по умолчанию кеш в 5 секунд
+	ExpiresDefault "access plus 5 seconds"
+	#кэшировать флэш и изображения на месяц
+	ExpiresByType image/x-icon "access plus 2592000 seconds"
+	ExpiresByType image/jpeg "access plus 2592000 seconds"
+	ExpiresByType image/png "access plus 2592000 seconds"
+	ExpiresByType image/gif "access plus 2592000 seconds"
+	ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+	#кэшировать css, javascript и текстовые файлы на одну неделю
+	ExpiresByType text/css "access plus 604800 seconds"
+	ExpiresByType text/javascript "access plus 604800 seconds"
+	ExpiresByType application/javascript "access plus 604800 seconds"
+	ExpiresByType application/x-javascript "access plus 604800 seconds"
+	#кэшировать html и htm файлы на один день
+	ExpiresByType text/html "access plus 43200 seconds"
+	#кэшировать xml файлы на десять минут
+	ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</ifModule>
+
+
